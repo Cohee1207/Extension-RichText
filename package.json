@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "dompurify": "^3.0.10",
+    "lodash": "^4.17.21",
     "markdown-it": "^14.1.0",
     "quill": "^2.0.0-rc.3",
     "turndown": "^7.1.3"

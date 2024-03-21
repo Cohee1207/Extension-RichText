@@ -114,9 +114,10 @@ quill.on(Quill.events.TEXT_CHANGE, function () {
     const html = DOMPurify.sanitize(quill.getSemanticHTML());
     const markdown = turndownService.turndown(html);
     textarea.value = markdown;
+    localStorage.setItem('userInput', markdown);
 });
 
-const observer = new MutationObserver(function (mutations) {
+const attributesObserver = new MutationObserver(function (mutations) {
     mutations.forEach(function (mutation) {
         if (mutation.type == 'attributes') {
             if (mutation.attributeName == 'placeholder') {
@@ -126,7 +127,7 @@ const observer = new MutationObserver(function (mutations) {
     });
 });
 
-observer.observe(textarea, {
+attributesObserver.observe(textarea, {
     attributes: true,
 });
 
