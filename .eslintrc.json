@@ -1,0 +1,41 @@
+ {
+    "root": true,
+    "extends": [
+        "eslint:recommended"
+    ],
+    "env": {
+        "es6": true,
+        "browser": true
+    },
+    "parserOptions": {
+        "ecmaVersion": "latest",
+        "sourceType": "module"
+    },
+    "overrides": [
+    ],
+    "globals": {
+        "$": "readonly",
+        "jQuery": "readonly",
+        "SillyTavern": "readonly",
+    },
+    // There are various vendored libraries that shouldn"t be linted
+    "ignorePatterns": ["node_modules/", "dist/"],
+    "rules": {
+        "no-unused-vars": ["error", { "args": "none" }],
+        "no-control-regex": "off",
+        "no-constant-condition": ["error", { "checkLoops": false }],
+        "require-yield": "off",
+        "quotes": ["error", "single"],
+        "semi": ["error", "always"],
+        "indent": ["error", 4, { "SwitchCase": 1, "FunctionDeclaration": { "parameters": "first" } }],
+        "comma-dangle": ["error", "always-multiline"],
+        "eol-last": ["error", "always"],
+        "no-trailing-spaces": "error",
+        "object-curly-spacing": ["error", "always"],
+        "space-infix-ops": "error",
+
+        // These rules should eventually be enabled.
+        "no-async-promise-executor": "off",
+        "no-inner-declarations": "off"
+    }
+}

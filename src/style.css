@@ -1,0 +1,34 @@
+#sheld, #nonQRFormItems {
+    overflow: visible;
+}
+
+.rich-editor {
+    order: 3;
+    flex: 1;
+}
+
+.rich-editor .ql-editor {
+    font-size: var(--mainFontSize);
+    font-family: "Noto Sans", "Noto Color Emoji", sans-serif;
+    text-shadow: 0px 0px calc(var(--shadowWidth) * 1px) var(--SmartThemeShadowColor);
+}
+
+.rich-editor .ql-editor.ql-blank:focus::before {
+    content: '';
+}
+
+.rich-editor br {
+    content: inherit;
+}
+
+.rich-editor .ql-editor.ql-blank::before {
+    color: var(--SmartThemeEmColor);
+    text-align: center;
+    white-space: nowrap;
+    font-style: normal;
+}
+
+.rich-editor.ql-bubble .ql-editor code {
+    font-size: inherit;
+    background-color: unset;
+}
