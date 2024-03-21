@@ -17,11 +17,6 @@ import Indent from 'quill/formats/indent';
 import Code, { Code as CodeInline } from 'quill/formats/code';
 import Icon from 'quill/ui/icons';
 
-class Quote extends Bold {
-    static blotName = 'quote';
-    static tagName = 'q';
-}
-
 import TurndownService from 'turndown';
 import DOMPurify from 'dompurify';
 import markdownit from 'markdown-it';
@@ -78,7 +73,6 @@ Quill.register({
     'formats/image': Image,
     'formats/list': List,
     'formats/indent': Indent,
-    'formats/quote': Quote,
     'ui/icons': Icon,
 });
 
@@ -88,7 +82,7 @@ const quill = new Quill(container, {
     debug: 'info',
     modules: {
         toolbar: [
-            ['bold', 'italic', 'underline', 'code', 'quote'],
+            ['bold', 'italic', 'underline', 'code'],
             ['blockquote', 'code-block', 'link'],
             [{ 'list': 'ordered' }, { 'list': 'bullet' }],
             [{ 'indent': '-1' }, { 'indent': '+1' }],
